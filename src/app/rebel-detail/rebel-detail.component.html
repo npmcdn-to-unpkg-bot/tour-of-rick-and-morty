@@ -1,10 +1,15 @@
-<div *ngIf="rebel">
-    <h2>{{rebel.Name}} details!</h2>
-    <div>
-        <label>id: </label>{{rebel.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="rebel.name" placeholder="name" />
+<div *ngIf="rebel" class="detail-alert">
+    
+    <div class="mdl-card" [class.selected]="rebel === selectedRebel">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{rebel.name}}</h2>
+        </div>
+        <div class="mdl-card__media">
+            <img src="{{rebel.image}}">
+        </div>
+        <div class="mdl-card__supporting-text">
+            lorem ipsum
+        </div>
     </div>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="goBack()">
   Back

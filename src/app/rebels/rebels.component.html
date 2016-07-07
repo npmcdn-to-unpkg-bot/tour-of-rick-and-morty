@@ -1,3 +1,11 @@
+<div *ngIf="selectedRebel" class="detail-alert">
+    <h2>
+        {{selectedRebel.name | uppercase}} is my hero!
+    </h2>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="gotoDetail()">
+  View Detials
+</button>
+</div>
 <div class="mdl-cell mdl-cell--4-col mdl-shadow--3dp" *ngFor="let rebel of rebels" id="rebel-{{rebel.id}}" (click)="onSelect(rebel)">
     <div class="mdl-card" [class.selected]="rebel === selectedRebel">
         <div class="mdl-card__title">

@@ -12,9 +12,10 @@ import {
 
 import { RebelsComponent } from './rebels.component';
 
-describe('Component: Rebels', () => {
+/*describe('Component: Rebels', () => {
   it('should create an instance', () => {
     let component = new RebelsComponent();
     expect(component).toBeTruthy();
   });
 });
+*/

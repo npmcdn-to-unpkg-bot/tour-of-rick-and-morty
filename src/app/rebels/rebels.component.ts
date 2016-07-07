@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { Rebel } from '../shared/rebel';
-import { RebelDetailComponent } from '../rebel-detail/rebel-detail.component';
 import { RebelService } from '../rebel.service'
 
 
@@ -9,7 +9,7 @@ const REBELS: Rebel[] = [];
 
 @Component({
     moduleId: module.id,
-    directives: [RebelDetailComponent],
+    directives: [],
     providers: [],
     selector: 'app-rebels',
     templateUrl: 'rebels.component.html',
@@ -20,7 +20,7 @@ export class RebelsComponent implements OnInit{
     public rebels = REBELS;
     selectedRebel: Rebel;
 
-    constructor(private rebelService: RebelService){}
+    constructor(private rebelService: RebelService, private router: Router){}
 
     getRebels(){
         this.rebelService.getRebels().then(rebels => this.rebels = rebels);
@@ -30,8 +30,9 @@ export class RebelsComponent implements OnInit{
     }
     onSelect(rebel: Rebel) {
         this.selectedRebel = rebel;
-        console.log(this.selectedRebel);
     }
-
+    gotoDetail(){
+        this.router.navigate(['/detail/', this.selectedRebel.id]);
+    }
 
 }
