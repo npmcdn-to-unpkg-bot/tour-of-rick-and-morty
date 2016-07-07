@@ -1,0 +1,6 @@
+<h3>Top Heroes</h3>
+<div class="mdl-cell mdl-cell--3-col mdl-shadow--3dp top-heroes" *ngFor="let rebel of rebels" >
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="gotoDetail(rebel)">
+  {{rebel.name}}
+</button>
+</div>

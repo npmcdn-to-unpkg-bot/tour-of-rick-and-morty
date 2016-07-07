@@ -1,0 +1,12 @@
+<div *ngIf="rebel">
+    <h2>{{rebel.Name}} details!</h2>
+    <div>
+        <label>id: </label>{{rebel.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="rebel.name" placeholder="name" />
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="goBack()">
+  Back
+</button>
+</div>
